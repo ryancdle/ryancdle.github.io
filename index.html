@@ -2,165 +2,73 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Portfolio</title>
-  <style>
-    :root {
-      --bg-light: #f9f9f9;
-      --text-light: #333;
-      --bg-dark: #1e1e1e;
-      --text-dark: #eee;
-      --accent: #2980b9;
-    }
-
-    [data-theme="light"] {
-      --bg: var(--bg-light);
-      --text: var(--text-light);
-    }
-
-    [data-theme="dark"] {
-      --bg: var(--bg-dark);
-      --text: var(--text-dark);
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    header {
-      background: var(--accent);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #ddd;
-    }
-
-    .toggle-theme {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: white;
-      color: var(--accent);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-    }
-
-    .project {
-      background: rgba(255,255,255,0.05);
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      border-top: 1px solid #ccc;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryan Le | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <button class="toggle-theme" onclick="toggleTheme()">🌙 Dark Mode</button>
-    <h1>Your Name</h1>
-    <p>Physics Student · Developer · Problem Solver</p>
+  <button class="toggle-theme" onclick="toggleTheme()">🌙 Dark Mode</button>
+
+  <header class="fade-in">
+    <h1>Ryan Le</h1>
+    <p>Physics student & developer exploring computational science, simulation, and data tools for real-world research.</p>
   </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>
-        I’m a physics undergraduate with a passion for building simulations, analyzing data, and creating software tools that make science more accessible.
-      </p>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-
-      <div class="project">
+  <section class="fade-in">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project fade-in" style="animation-delay: 0s;">
         <h3>Driven Pendulum Simulator</h3>
-        <p>A numerical simulation of chaotic motion using Python and Matplotlib.</p>
-        <a href="https://github.com/yourusername/chaotic-pendulum" target="_blank">View on GitHub</a>
+        <p>Simulates chaotic motion in a nonlinear driven pendulum system using numerical methods.</p>
+        <a href="https://github.com/ryanle-dev/chaotic-pendulum" target="_blank">View on GitHub</a>
       </div>
-
-      <div class="project">
+      <div class="project fade-in" style="animation-delay: 0.2s;">
         <h3>UV-Vis Spectroscopy Toolkit</h3>
-        <p>A tool for analyzing bandgap and Urbach energy from perovskite absorption data.</p>
-        <a href="https://github.com/yourusername/uv-vis-toolkit" target="_blank">View on GitHub</a>
+        <p>Analyzes bandgap and Urbach energy in perovskite samples using absorbance data.</p>
+        <a href="https://github.com/ryanle-dev/uv-vis-toolkit" target="_blank">View on GitHub</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>
-        📧 <a href="mailto:your.email@example.com">your.email@example.com</a><br>
-        💼 <a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a><br>
-        🐙 <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      </p>
-    </section>
-  </main>
+  <section class="fade-in">
+    <h2>Contact</h2>
+    <p>
+      📧 <a href="mailto:ryanle@example.com">ryanle@example.com</a><br>
+      💼 <a href="https://linkedin.com/in/ryanle" target="_blank">LinkedIn</a><br>
+      🐙 <a href="https://github.com/ryanle-dev" target="_blank">GitHub</a>
+    </p>
+  </section>
 
-  <footer>
-    &copy; 2025 Your Name. All rights reserved.
+  <footer class="fade-in">
+    &copy; 2025 Ryan Le. All rights reserved.
   </footer>
 
   <script>
     function toggleTheme() {
       const html = document.documentElement;
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      html.setAttribute('data-theme', newTheme);
+      const current = html.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', next);
       document.querySelector('.toggle-theme').textContent =
-        newTheme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+        next === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
     }
+
+    // Scroll-triggered fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    faders.forEach(el => observer.observe(el));
   </script>
 
 </body>
