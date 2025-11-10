@@ -1,16 +1,16 @@
-// Smooth scroll for CV button in sidebar
+// Smooth scroll for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    // CV button in sidebar
     const cvButton = document.querySelector('.sidebar-cv-button');
-    
     if (cvButton) {
         cvButton.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
-                const sidebarHeight = 0;
+                const topNavHeight = 60;
                 const elementPosition = targetSection.offsetTop;
-                const offsetPosition = elementPosition - sidebarHeight - 20;
+                const offsetPosition = elementPosition - topNavHeight - 20;
                 
                 window.scrollTo({
                     top: offsetPosition,
@@ -19,4 +19,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Top navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                const topNavHeight = 60;
+                const elementPosition = targetSection.offsetTop;
+                const offsetPosition = elementPosition - topNavHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
