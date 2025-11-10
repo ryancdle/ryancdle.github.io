@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Top navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Top navigation links (including site title)
+    const navLinks = document.querySelectorAll('.nav-link, .nav-site-title');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
