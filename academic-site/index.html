@@ -8,200 +8,157 @@
     <script src="nav.js" defer></script>
 </head>
 <body>
-    <!-- Top Navigation Bar -->
-    <nav class="top-nav">
-        <div class="top-nav-wrapper">
-            <div class="top-nav-header">
-                <span class="top-nav-name">Dat Chi Le (Ryan)</span>
-                <a href="#cv" class="top-nav-cv">CV</a>
-            </div>
-        </div>
-    </nav>
-
     <div class="layout">
         <!-- Left Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-content">
-                <div class="sidebar-header">
-                    <h1 class="name">Dat Chi Le (Ryan)</h1>
-                </div>
-
+                <h1 class="sidebar-name">Dat Chi Le (Ryan)</h1>
+                <p class="sidebar-title">Final Year Theoretical Physics Student</p>
+                <p class="sidebar-tagline">Quantum Computing | Machine Learning | Theoretical Physics</p>
+                
                 <div class="sidebar-photo">
-                    <!-- Square version - active -->
-                    <div class="photo-wrapper-square">
-                        <img src="images/profile.jpg" alt="Profile Photo" class="profile-photo-square">
+                    <div class="photo-wrapper-circle">
+                        <img src="images/profile.jpg" alt="Dat Chi Le (Ryan)" class="profile-photo-circle">
                     </div>
-                    <!-- Circular version - commented out but keeping config for reference -->
-                    <!-- <div class="photo-wrapper">
-                        <img src="images/profile.jpg" alt="Profile Photo" class="profile-photo">
-                    </div> -->
                 </div>
-
-                <div class="sidebar-name-below">
-                    <h2 class="sidebar-name-below-text">Dat Chi Le (Ryan)</h2>
+                
+                <div class="sidebar-location">
+                    <span class="location-icon">📍</span>
+                    <span>Sheffield, UK</span>
                 </div>
-
-                <div class="sidebar-roles">
-                    <p class="title">Final Year Theoretical Physics Student @ The University of Sheffield</p>
-                    <p class="role">Quantum Computing Intern @ UCL CDT</p>
-                    <p class="role">Quantum Machine Learning @ Sheffield Quantum Centre</p>
-                    <p class="tagline">Quantum Computing | Machine Learning | Theoretical Physics</p>
-                </div>
-
-                <div class="sidebar-info">
-                    <div class="location">
-                        <span class="location-icon">📍</span>
-                        <span>Sheffield, UK</span>
+                
+                <div class="sidebar-follow">
+                    <h3 class="follow-heading">FOLLOW</h3>
+                    <div class="sidebar-social">
+                        <a href="https://www.linkedin.com/in/ryancdle/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://github.com/ryancdle" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="mailto:cdle1@sheffield.ac.uk">Email</a>
                     </div>
-
-                    <div class="divider"></div>
-
-                    <div class="social">
-                        <div class="social-links">
-                            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">X (Formerly Twitter)</a>
-                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">Github</a>
-                            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                            <a href="mailto:your.email@example.com">Email</a>
-                        </div>
-                    </div>
-
                 </div>
+                
+                <a href="#cv" class="sidebar-cv-button">CV</a>
             </div>
         </aside>
 
         <!-- Right Main Content -->
         <main class="main-content">
-            <!-- Section Navigation Bar -->
-            <nav class="section-nav">
-                <a href="#about" class="nav-item active">
-                    <span class="nav-icon">👤</span>
-                    <span class="nav-text">About</span>
-                </a>
-                <a href="#research" class="nav-item">
-                    <span class="nav-icon">🔬</span>
-                    <span class="nav-text">Research</span>
-                </a>
-                <a href="#teaching" class="nav-item">
-                    <span class="nav-icon">📚</span>
-                    <span class="nav-text">Teaching</span>
-                </a>
-                <a href="#publications" class="nav-item">
-                    <span class="nav-icon">📄</span>
-                    <span class="nav-text">Publications</span>
-                </a>
-                <a href="#cv" class="nav-item">
-                    <span class="nav-icon">📋</span>
-                    <span class="nav-text">CV</span>
-                </a>
-                <a href="#news" class="nav-item">
-                    <span class="nav-icon">📰</span>
-                    <span class="nav-text">News</span>
-                </a>
-                <a href="#contact" class="nav-item">
-                    <span class="nav-icon">✉️</span>
-                    <span class="nav-text">Contact</span>
-                </a>
-            </nav>
-
-            <!-- About Section -->
-            <section id="about" class="section">
-                <h2>About</h2>
-                <div class="content">
-                    <p>I am [Your Name] ([pronunciation/alternative name]). I am [your position] at [Institution].</p>
-                    <p>[Your detailed bio paragraph here. Add information about your background, education, research interests, and achievements.]</p>
-                    
-                    <h3>Education</h3>
-                    <ul>
-                        <li>Ph.D. in [Field], [University], [Year]</li>
-                        <li>[Other degrees or qualifications...]</li>
-                    </ul>
+            <!-- Header Section with Roles -->
+            <header class="site-header">
+                <div class="header-roles">
+                    <p class="header-role-main">Final Year Theoretical Physics Student @ The University of Sheffield</p>
+                    <p class="header-role">Quantum Computing Intern @ UCL CDT</p>
+                    <p class="header-role">Quantum Machine Learning @ Sheffield Quantum Centre</p>
                 </div>
-            </section>
+            </header>
 
-            <!-- Research Interest Section -->
-            <section id="research" class="section">
-                <h2>Research Interest</h2>
-                <div class="content">
-                    <p>My research aims to build a rigorous foundation for understanding how scientists, machines, and future quantum computers can learn and discover new phenomena governing our quantum-mechanical universe.</p>
-                    <p>I leverage quantum information theory, quantum many-body physics, learning theory, and complexity theory to formalize and explore new questions in the following directions:</p>
-                    <ul>
-                        <li>When can quantum machines learn and predict better than classical machines?</li>
-                        <li>How to accelerate/automate the development of quantum and physical sciences?</li>
-                        <li>What physical phenomena can classical vs quantum machines learn and discover?</li>
-                    </ul>
-                    <p>My ultimate goal is to build quantum machines capable of discovering new facets of our universe beyond the capabilities of humans and classical machines.</p>
-                </div>
-            </section>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About</h2>
+            <div class="content">
+                <p>I'm Dat Chi Le (Ryan), a final-year theoretical physics student at the University of Sheffield researching quantum computing and machine learning. I'm currently working as a Quantum Computing Intern at UCL CDT and contributing to Quantum Machine Learning research at the Sheffield Quantum Centre.</p>
+                
+                <p>My research focuses on exploring how quantum computers can learn and discover new phenomena in our quantum-mechanical universe, bridging the gap between theoretical physics and practical quantum applications.</p>
+                
+                <h3>Current Affiliations</h3>
+                <ul>
+                    <li>Final Year Theoretical Physics Student @ The University of Sheffield</li>
+                    <li>Quantum Computing Intern @ UCL CDT</li>
+                    <li>Quantum Machine Learning @ Sheffield Quantum Centre</li>
+                </ul>
+                
+                <h3>Education</h3>
+                <ul>
+                    <li>B.Sc./M.Phys. in Theoretical Physics, The University of Sheffield (Expected 2025)</li>
+                    <li>[Add previous education or qualifications...]</li>
+                </ul>
+            </div>
+        </section>
 
-            <!-- Teaching Section -->
-            <section id="teaching" class="section">
-                <h2>Teaching</h2>
-                <div class="content">
-                    <p><strong>Fall 2025:</strong> Course Name (Course Code)</p>
-                    <p>[Add your teaching information here...]</p>
-                </div>
-            </section>
+        <!-- Research Interest Section -->
+        <section id="research" class="section">
+            <h2>Research Interest</h2>
+            <div class="content">
+                <p>My research aims to build a rigorous foundation for understanding how scientists, machines, and future quantum computers can learn and discover new phenomena governing our quantum-mechanical universe.</p>
+                <p>I leverage quantum information theory, quantum many-body physics, learning theory, and complexity theory to formalize and explore new questions in the following directions:</p>
+                <ul>
+                    <li>When can quantum machines learn and predict better than classical machines?</li>
+                    <li>How to accelerate/automate the development of quantum and physical sciences?</li>
+                    <li>What physical phenomena can classical vs quantum machines learn and discover?</li>
+                </ul>
+                <p>My ultimate goal is to build quantum machines capable of discovering new facets of our universe beyond the capabilities of humans and classical machines.</p>
+            </div>
+        </section>
 
-            <!-- Publications Section -->
-            <section id="publications" class="section">
-                <h2>Publications</h2>
-                <div class="content">
-                    <p>Google Scholar provides a full list under chronological/citations order.</p>
-                    <ol class="publications">
-                        <li>
-                            <em>Paper Title</em><br>
-                            Author1, Author2, <strong>Your Name</strong>.<br>
-                            <em>Journal/Conference (Year).</em> [<a href="#">PDF</a>] [<a href="#">arXiv</a>]
-                        </li>
-                        <li>
-                            <em>Another Paper Title</em><br>
-                            Author1, <strong>Your Name</strong>, Author3.<br>
-                            <em>Journal/Conference (Year).</em> [<a href="#">PDF</a>]
-                        </li>
-                    </ol>
-                </div>
-            </section>
+        <!-- Teaching Section -->
+        <section id="teaching" class="section">
+            <h2>Teaching</h2>
+            <div class="content">
+                <p><strong>Fall 2025:</strong> Course Name (Course Code)</p>
+                <p>[Add your teaching information here...]</p>
+            </div>
+        </section>
 
-            <!-- CV Section -->
-            <section id="cv" class="section">
-                <h2>CV</h2>
-                <div class="content">
-                    <p>Download my CV:</p>
-                    <a href="resume.pdf" target="_blank" class="cv-download-button">Download CV</a>
-                </div>
-            </section>
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <h2>Publications</h2>
+            <div class="content">
+                <p>Google Scholar provides a full list under chronological/citations order.</p>
+                <ol class="publications">
+                    <li>
+                        <em>Paper Title</em><br>
+                        Author1, Author2, <strong>Your Name</strong>.<br>
+                        <em>Journal/Conference (Year).</em> [<a href="#">PDF</a>] [<a href="#">arXiv</a>]
+                    </li>
+                    <li>
+                        <em>Another Paper Title</em><br>
+                        Author1, <strong>Your Name</strong>, Author3.<br>
+                        <em>Journal/Conference (Year).</em> [<a href="#">PDF</a>]
+                    </li>
+                </ol>
+            </div>
+        </section>
 
-            <!-- News/Updates Section -->
-            <section id="news" class="section">
-                <h2>Recent News</h2>
-                <div class="content">
-                    <table class="news-table">
-                        <tr>
-                            <td class="news-date">Nov 08, 2025</td>
-                            <td class="news-item">Launched academic portfolio website</td>
-                        </tr>
-                        <tr>
-                            <td class="news-date">Oct 01, 2025</td>
-                            <td class="news-item">Started Quantum Computing Internship @ UCL CDT</td>
-                        </tr>
-                        <tr>
-                            <td class="news-date">Sep 15, 2025</td>
-                            <td class="news-item">Joined Quantum Machine Learning @ Sheffield Quantum Centre</td>
-                        </tr>
-                        <!-- Add more news items as needed -->
-                    </table>
-                </div>
-            </section>
+        <!-- CV Section -->
+        <section id="cv" class="section">
+            <h2>CV</h2>
+            <div class="content">
+                <p>Download my CV:</p>
+                <a href="resume.pdf" target="_blank" class="cv-download-button">Download CV</a>
+            </div>
+        </section>
 
-            <!-- Contact Section -->
-            <section id="contact" class="section">
-                <h2>Contact</h2>
-                <div class="content">
-                    <p>Feel free to reach out to me via email or through the social links in the sidebar.</p>
-                    <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-                    <p><strong>Location:</strong> Sheffield, UK</p>
-                </div>
-            </section>
+        <!-- News/Updates Section -->
+        <section id="news" class="section">
+            <h2>Recent News</h2>
+            <div class="content">
+                <table class="news-table">
+                    <tr>
+                        <td class="news-date">Nov 08, 2025</td>
+                        <td class="news-item">Launched academic portfolio website</td>
+                    </tr>
+                    <tr>
+                        <td class="news-date">Oct 01, 2025</td>
+                        <td class="news-item">Started Quantum Computing Internship @ UCL CDT</td>
+                    </tr>
+                    <tr>
+                        <td class="news-date">Sep 15, 2025</td>
+                        <td class="news-item">Joined Quantum Machine Learning @ Sheffield Quantum Centre</td>
+                    </tr>
+                    <!-- Add more news items as needed -->
+                </table>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <div class="content">
+                    <p>Feel free to reach out to me via email or through the social links above.</p>
+                    <p><strong>Email:</strong> <a href="mailto:cdle1@sheffield.ac.uk">cdle1@sheffield.ac.uk</a></p>
+                <p><strong>Location:</strong> Sheffield, UK</p>
+                <p>I'm always interested in discussing quantum computing, machine learning, and theoretical physics. Don't hesitate to get in touch!</p>
+            </div>
+        </section>
         </main>
     </div>
     <footer class="footer">
@@ -209,4 +166,3 @@
     </footer>
 </body>
 </html>
-
