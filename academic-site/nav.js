@@ -36,7 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Account for fixed top nav
+                const topNavHeight = 80;
+                const elementPosition = targetSection.offsetTop;
+                const offsetPosition = elementPosition - topNavHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
         });
     });

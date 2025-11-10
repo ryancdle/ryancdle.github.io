@@ -22,27 +22,24 @@ body {
     z-index: 1000;
 }
 
-.top-nav-content {
+.top-nav-wrapper {
+    margin-left: 300px;
+    max-width: 900px;
+    padding: 1.5rem 4rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.top-nav-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 4rem 1.5rem calc(300px + 4rem);
-    max-width: 900px;
-}
-
-.top-nav-left {
-    flex: 1;
 }
 
 .top-nav-name {
     font-size: 1.1rem;
     font-weight: 600;
     color: #000000;
-}
-
-.top-nav-right {
-    flex: 1;
-    text-align: right;
 }
 
 .top-nav-cv {
@@ -55,14 +52,6 @@ body {
 
 .top-nav-cv:hover {
     color: #666666;
-}
-
-.top-nav-separator {
-    height: 1px;
-    background-color: #e0e0e0;
-    margin-left: calc(300px + 4rem);
-    margin-right: 4rem;
-    max-width: 900px;
 }
 
 /* Layout */
@@ -164,11 +153,12 @@ body {
     line-height: 1.4;
 }
 
-.sidebar-roles .description {
+.sidebar-roles .tagline {
     font-size: 0.9rem;
     margin: 1.5rem 0 0 0;
     color: #cccccc;
     line-height: 1.5;
+    font-style: italic;
 }
 
 .profile-photo {
@@ -273,6 +263,7 @@ body {
     background-color: #ffffff;
     padding: 2rem 4rem 3rem 4rem;
     max-width: 900px;
+    box-sizing: border-box;
 }
 
 /* Navigation Bar Styles */
@@ -289,18 +280,19 @@ body {
 }
 
 .nav-item {
-    flex: 1;
+    flex: 0 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
     color: #666666;
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: all 0.2s ease;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     background-color: transparent;
+    white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -330,12 +322,14 @@ body {
 
 .section {
     margin-bottom: 4rem;
+    scroll-margin-top: 100px; /* Account for fixed nav */
 }
 
 .section h2 {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
+    margin-top: 0;
     color: #000000;
     border-bottom: 2px solid #000000;
     padding-bottom: 0.5rem;
@@ -417,6 +411,35 @@ body {
     background-color: #333333;
 }
 
+/* News Table Styles */
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.news-table tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.news-table tr:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    padding: 0.75rem 1rem 0.75rem 0;
+    font-weight: 500;
+    color: #666666;
+    white-space: nowrap;
+    vertical-align: top;
+    width: 140px;
+}
+
+.news-item {
+    padding: 0.75rem 0;
+    color: #333333;
+}
+
 /* Footer Styles */
 .footer {
     margin-left: 300px;
@@ -430,20 +453,15 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .top-nav-content {
-        padding: 1.5rem 1.5rem;
+    .top-nav-wrapper {
+        margin-left: 0;
+        padding: 1.5rem 1.5rem 0 1.5rem;
+    }
+
+    .top-nav-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
-    }
-
-    .top-nav-separator {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-    }
-
-    .top-nav-right {
-        text-align: left;
     }
 
     .layout {
