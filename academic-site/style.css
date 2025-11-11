@@ -75,11 +75,21 @@ body {
     }
     
     .layout {
-        padding: 0 1rem; /* Reduce padding on medium screens */
+        padding: 0 clamp(0.75rem, 1.5vw, 1rem);
+        gap: clamp(0.75rem, 1.5vw, 1.5rem);
     }
     
     .top-nav-container {
-        padding: 1rem 1rem; /* Reduce nav padding */
+        padding: clamp(0.75rem, 1.5vw, 1rem);
+    }
+    
+    .sidebar {
+        width: clamp(200px, 20vw, 250px);
+        padding: clamp(1rem, 1.5vw, 1.5rem);
+    }
+    
+    .main-content {
+        padding: clamp(1rem, 1.5vw, 1.5rem);
     }
 }
 
@@ -100,20 +110,24 @@ body {
 /* Layout - Centered Container (Academic Pages Style) */
 .layout {
     max-width: 1200px;
+    width: 100%;
     margin: 60px auto 0 auto; /* Space for top nav, centered */
     display: flex;
     min-height: calc(100vh - 60px);
-    padding: 0 2rem; /* Matches nav container padding for alignment */
+    padding: 0 clamp(1rem, 2vw, 2rem); /* Responsive padding */
     box-sizing: border-box;
+    gap: clamp(1rem, 2vw, 2rem); /* Responsive gap between sidebar and content */
 }
 
 /* Left Sidebar */
 .sidebar {
     width: 250px;
+    min-width: 200px;
+    max-width: 300px;
     flex-shrink: 0;
     background-color: #ffffff;
     color: #000000;
-    padding: 2rem 2rem 2rem 2rem;
+    padding: clamp(1rem, 2vw, 2rem);
     height: fit-content;
     position: sticky;
     top: 60px;
@@ -134,12 +148,14 @@ body {
 }
 
 .photo-wrapper-square {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1;
     border-radius: 8px;
     overflow: hidden;
     border: 2px solid #333333;
     position: relative;
+    margin: 0 auto;
 }
 
 .sidebar-name {
@@ -182,6 +198,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: 55% center;
+    display: block;
 }
 
 .sidebar-location {
@@ -252,10 +269,10 @@ body {
 /* Main Content - Right Side */
 .main-content {
     flex: 1;
+    min-width: 0; /* Allows flex item to shrink below content size */
     min-height: calc(100vh - 60px);
     background-color: #ffffff;
-    padding: 2rem 2rem;
-    margin-left: 2rem;
+    padding: clamp(1rem, 2vw, 2rem);
     max-width: 900px;
     box-sizing: border-box;
 }
@@ -339,6 +356,24 @@ body {
     text-decoration-color: #000000;
 }
 
+/* Responsive Images */
+.content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+}
+
+.content figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.content figure img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* CV Download Button */
 .cv-download-button {
     display: inline-block;
@@ -420,84 +455,96 @@ body {
     
     .top-nav-right {
         margin-left: 0;
-        gap: 1rem; /* Reduce gap between nav links */
+        gap: clamp(0.5rem, 2vw, 1rem); /* Responsive gap */
     }
     
     .top-nav-container {
-        padding: 0.75rem 1rem; /* Further reduce padding */
+        padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
         flex-wrap: wrap;
     }
     
     .nav-link {
-        font-size: 0.85rem; /* Slightly smaller text */
+        font-size: clamp(0.8rem, 2vw, 0.85rem); /* Responsive font size */
     }
     
     .nav-site-title {
-        font-size: 1rem;
+        font-size: clamp(0.95rem, 2.5vw, 1rem);
     }
     
     .layout {
         flex-direction: column;
-        padding: 0 1rem; /* Reduce layout padding */
-        margin-top: 60px; /* Adjust for nav height */
+        padding: 0 clamp(0.75rem, 2vw, 1rem);
+        margin-top: 60px;
+        gap: 0; /* No gap when stacked */
     }
 
     .sidebar {
         position: relative;
         width: 100%;
+        max-width: 100%;
         height: auto;
-        padding: 1.5rem; /* Reduce sidebar padding */
+        padding: clamp(1rem, 3vw, 1.5rem);
+        top: 0; /* Reset sticky positioning */
+    }
+    
+    .photo-wrapper-square {
+        max-width: min(280px, 50vw); /* Responsive image size */
     }
 
     .main-content {
-        margin-left: 0;
-        padding: 1.5rem; /* Reduce main content padding */
+        padding: clamp(1rem, 3vw, 1.5rem);
         max-width: 100%;
     }
 
     .footer {
-        margin-left: 0;
-        padding: 1.5rem;
+        padding: clamp(1rem, 3vw, 1.5rem);
     }
 
     .section h2 {
-        font-size: 1.5rem;
+        font-size: clamp(1.25rem, 5vw, 1.5rem); /* Responsive heading */
+    }
+    
+    .section {
+        margin-bottom: clamp(2rem, 6vw, 4rem);
     }
 }
 
 /* Very small screens */
 @media (max-width: 480px) {
     .top-nav-container {
-        padding: 0.5rem 0.75rem;
+        padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(0.5rem, 2vw, 0.75rem);
     }
     
     .nav-site-title {
-        font-size: 0.95rem;
+        font-size: clamp(0.85rem, 4vw, 0.95rem);
     }
     
     .nav-link {
-        font-size: 0.8rem;
+        font-size: clamp(0.75rem, 3.5vw, 0.8rem);
     }
     
     .top-nav-right {
-        gap: 0.75rem;
+        gap: clamp(0.5rem, 2vw, 0.75rem);
     }
     
     .layout {
-        padding: 0 0.75rem;
+        padding: 0 clamp(0.5rem, 2vw, 0.75rem);
     }
     
     .sidebar,
     .main-content {
-        padding: 1rem;
+        padding: clamp(0.75rem, 3vw, 1rem);
     }
     
     .photo-wrapper-square {
-        width: 150px;
-        height: 150px;
+        max-width: min(200px, 45vw);
     }
     
     .section h2 {
-        font-size: 1.25rem;
+        font-size: clamp(1.1rem, 6vw, 1.25rem);
+    }
+    
+    .content {
+        font-size: clamp(0.9rem, 4vw, 1rem);
     }
 }

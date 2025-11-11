@@ -14,12 +14,6 @@ I leverage quantum information theory, quantum many-body physics, learning theor
 
 My ultimate goal is to build quantum machines capable of discovering new facets of our universe beyond the capabilities of humans and classical machines.
 
-## Current Affiliations
-
-- Final Year Theoretical Physics Student @ The University of Sheffield
-- Quantum Computing Intern @ UCL CDT
-- Quantum Machine Learning @ Sheffield Quantum Centre
-
 ## Education
 
 - B.Sc./M.Phys. in Theoretical Physics, The University of Sheffield (Expected 2025)

@@ -426,42 +426,20 @@ html[data-theme="dark"] {
 }
 
 /* Ensure active nav item has consistent visual feedback in both themes */
-/* Override the original al-folio rule that's scoped to .navbar-light */
-/* Use only color change, no font-weight change to keep it subtle */
-.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link,
-.navbar-nav .nav-item.active > .nav-link {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+/* Match the original al-folio rule exactly - use inherit instead of transparent */
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+    background-color: inherit !important;
     font-weight: inherit !important;
     color: var(--global-theme-color) !important;
-    opacity: 1 !important;
 }
 
-/* Ensure dark theme has same styling (no box/background) */
-html[data-theme="dark"] .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link,
-html[data-theme="dark"] .navbar-nav .nav-item.active > .nav-link {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    font-weight: inherit !important;
-    color: var(--global-theme-color) !important;
-    opacity: 1 !important;
-}
-
-/* Ensure hover state is consistent - only color change, no background */
-.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link:hover,
-.navbar-nav .nav-item.active > .nav-link:hover {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+/* Ensure hover state is consistent - match original al-folio */
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link:hover {
     color: var(--global-hover-color) !important;
-    opacity: 1 !important;
 }
 
-/* Add a subtle underline to active nav item for better visibility */
-.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link::after,
-.navbar-nav .nav-item.active > .nav-link::after {
+/* Add underline for visual feedback (user requested) */
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -473,22 +451,8 @@ html[data-theme="dark"] .navbar-nav .nav-item.active > .nav-link {
     opacity: 0.8;
 }
 
-.navbar-nav .nav-item.active > .nav-link {
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
     position: relative;
-}
-
-/* Remove any Bootstrap or MDB default active state styling that might cause a box */
-.navbar-nav .nav-item.active > .nav-link:focus,
-.navbar-nav .nav-item.active > .nav-link:active {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-/* Ensure active state is visible immediately (not just on hover) in both themes */
-.navbar-nav .nav-item.active > .nav-link {
-    color: var(--global-theme-color) !important;
 }
 
 /* Social icons next to navbar brand */
