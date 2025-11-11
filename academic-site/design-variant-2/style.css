@@ -1,322 +1,257 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
+/* ============================================
+   COMPREHENSIVE RESPONSIVE SYSTEM
+   ============================================ */
+
+/* Typography */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ============================================
+   CONTAINER - Override Bootstrap defaults
+   ============================================ */
+
+.container {
+    max-width: 1200px !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Bootstrap Row - Remove negative margins that cause layout shifts */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Bootstrap Columns - Remove default padding to prevent conflicts */
+.row > * {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     box-sizing: border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #ffffff;
-}
+/* ============================================
+   NAVIGATION
+   ============================================ */
 
-/* Top Navigation Bar (Academic Pages Style) */
 .top-nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: #000000;
-    border-bottom: 1px solid #333333;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
     z-index: 1000;
-    padding: 0;
-}
-
-.top-nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-}
-
-.top-nav-left {
-    display: flex;
-    align-items: center;
-    /* Aligns with sidebar content: nav container padding (2rem) + additional 2rem to match sidebar content padding */
-    padding-left: 2rem; /* Total 4rem from nav container left to match sidebar content (2rem layout + 2rem sidebar padding) */
 }
 
 .nav-site-title {
-    color: #ffffff;
+    color: #000;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
+    letter-spacing: -0.01em;
     transition: color 0.2s ease;
 }
 
 .nav-site-title:hover {
-    color: #cccccc;
-}
-
-.top-nav-right {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    flex-wrap: wrap;
-    /* Aligns with main content text: sidebar (250px) + margin (2rem) + main padding (2rem) = 250px + 4rem from layout start */
-    /* Adjusted for nav container padding: 282px + 2rem = 314px from nav container left */
-    margin-left: calc(282px + 2rem); /* 250px sidebar + 2rem margin + 2rem main padding offset */
-}
-
-/* Medium screens - adjust navigation and layout */
-@media (max-width: 1200px) {
-    .top-nav-left {
-        padding-left: 0; /* Remove extra padding on smaller screens */
-    }
-    
-    .top-nav-right {
-        margin-left: 0; /* Remove margin on smaller screens */
-    }
-    
-    .layout {
-        padding: 0 1rem; /* Reduce padding on medium screens */
-    }
-    
-    .top-nav-container {
-        padding: 1rem 1rem; /* Reduce nav padding */
-    }
+    color: #666;
 }
 
 .nav-link {
-    color: #ffffff;
+    color: #666;
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.875rem;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
     transition: color 0.2s ease;
-    white-space: nowrap;
 }
 
 .nav-link:hover {
-    color: #cccccc;
-    text-decoration: underline;
+    color: #000;
 }
 
-/* Layout - Centered Container (Academic Pages Style) */
-.layout {
-    max-width: 1200px;
-    margin: 60px auto 0 auto; /* Space for top nav, centered */
-    display: flex;
-    min-height: calc(100vh - 60px);
-    padding: 0 2rem; /* Matches nav container padding for alignment */
-    box-sizing: border-box;
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+.main-content {
+    padding-top: 80px;
+    padding-bottom: 2rem;
 }
 
-/* Left Sidebar */
+/* ============================================
+   SIDEBAR - Base styles for all screen sizes
+   ============================================ */
+
 .sidebar {
-    width: 250px;
-    flex-shrink: 0;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 2rem 2rem 2rem 2rem;
-    height: fit-content;
     position: sticky;
-    top: 60px;
+    top: 80px;
+    height: fit-content;
     align-self: flex-start;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .sidebar-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.75rem;
+    box-sizing: border-box;
 }
 
-.sidebar-photo {
-    margin: 0 0 1.5rem 0;
+/* Profile Image Container */
+.profile-image-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
-.photo-wrapper-square {
-    width: 200px;
-    height: 200px;
+/* Profile Image - Base styles */
+.profile-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 55% center;
+    border: 2px solid #e0e0e0;
     border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid #333333;
-    position: relative;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Profile Info */
+.profile-info {
+    text-align: center;
+    width: 100%;
 }
 
 .sidebar-name {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: 600;
-    margin: 0 0 0.5rem 0;
-    color: #000000;
+    margin-bottom: 0.75rem;
+    color: #000;
     line-height: 1.3;
-    text-align: left;
-}
-
-.sidebar-title {
-    font-size: 0.9rem;
-    margin: 0 0 0.5rem 0;
-    color: #000000;
-    text-align: left;
+    text-align: center;
+    letter-spacing: -0.01em;
 }
 
 .sidebar-tagline {
-    font-size: 0.85rem;
-    margin: 0 0 1.5rem 0;
-    color: #666666;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    color: #666;
     font-style: italic;
-    text-align: left;
-}
-
-.sidebar-bio {
-    margin: 0 0 1.5rem 0;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: #333333;
-}
-
-.sidebar-bio p {
-    margin: 0.5rem 0;
-}
-
-.profile-photo-square {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 55% center;
+    text-align: center;
+    line-height: 1.5;
 }
 
 .sidebar-location {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    font-size: 0.85rem;
-    color: #000000;
-    margin-bottom: 1.5rem;
-    justify-content: flex-start;
+    font-size: 0.95rem;
+    color: #000;
+    margin-bottom: 1.25rem;
 }
 
 .location-icon {
-    font-size: 1rem;
-}
-
-.sidebar-follow {
-    margin-top: auto;
-    margin-bottom: 1.5rem;
-}
-
-.follow-heading {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #000000;
-    margin: 0 0 0.75rem 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: left;
+    font-size: 0.9rem;
+    color: #666;
+    width: 16px;
+    text-align: center;
 }
 
 .sidebar-social {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    align-items: center;
 }
 
 .sidebar-social a {
-    color: #000000;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #000;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     transition: color 0.2s ease;
-    text-align: left;
+    justify-content: center;
+}
+
+.sidebar-social a i {
+    font-size: 1rem;
+    width: 18px;
+    text-align: center;
+    color: #666;
+    transition: color 0.2s ease;
 }
 
 .sidebar-social a:hover {
-    color: #666666;
+    color: #666;
 }
 
-.sidebar-cv-button {
-    display: block;
-    width: 100%;
-    padding: 0.75rem 1.5rem;
-    background-color: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background-color 0.2s ease;
+.sidebar-social a:hover i {
+    color: #000;
 }
 
-.sidebar-cv-button:hover {
-    background-color: #333333;
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+.main-content-area {
+    /* Bootstrap handles width automatically */
 }
 
-/* Main Content - Right Side */
-.main-content {
-    flex: 1;
-    min-height: calc(100vh - 60px);
-    background-color: #ffffff;
-    padding: 2rem 2rem;
-    margin-left: 2rem;
-    max-width: 900px;
-    box-sizing: border-box;
-}
-
-/* Portfolio Items */
-.portfolio-items {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.portfolio-item {
-    padding: 1.5rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    background-color: #fafafa;
-}
-
-.portfolio-item h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #000000;
-}
-
-.portfolio-item p {
-    margin-bottom: 0.5rem;
-}
-
-/* Sections */
 .section {
-    margin-bottom: 4rem;
-    scroll-margin-top: 80px; /* Account for fixed nav when scrolling */
+    scroll-margin-top: 80px;
 }
 
 .section h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     margin-top: 0;
-    color: #000000;
-    border-bottom: 2px solid #000000;
+    color: #000;
+    border-bottom: 2px solid #000;
     padding-bottom: 0.5rem;
+    letter-spacing: -0.01em;
 }
 
 .section h3 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #000000;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: #000;
+    letter-spacing: -0.005em;
 }
 
 .content {
     font-size: 1rem;
-    line-height: 1.8;
-    color: #333333;
+    line-height: 1.7;
+    color: #333;
 }
 
 .content p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .content ul, .content ol {
@@ -329,37 +264,21 @@ body {
 }
 
 .content a {
-    color: #000000;
-    text-decoration: underline;
-    text-decoration-color: #cccccc;
-    transition: text-decoration-color 0.2s ease;
+    color: #0066cc;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
 }
 
 .content a:hover {
-    text-decoration-color: #000000;
+    border-bottom-color: #0066cc;
 }
 
-/* CV Download Button */
-.cv-download-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    margin-top: 1rem;
-}
+/* ============================================
+   CONTENT SECTIONS
+   ============================================ */
 
-.cv-download-button:hover {
-    background-color: #333333;
-}
-
-/* News Table Styles */
 .news-table {
-    width: 100%;
-    border-collapse: collapse;
     margin-top: 1rem;
 }
 
@@ -367,18 +286,14 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
-.news-table tr:first-child {
-    border-bottom: 2px solid #000000;
-}
-
 .news-table tr:last-child {
     border-bottom: none;
 }
 
 .news-table td.news-date {
-    padding: 0.75rem 1rem 0.75rem 0;
+    padding: 0.75rem 1.5rem 0.75rem 0;
     font-weight: 500;
-    color: #666666;
+    color: #666;
     white-space: nowrap;
     vertical-align: top;
     width: 140px;
@@ -386,10 +301,9 @@ body {
 
 .news-table td.news-item {
     padding: 0.75rem 0;
-    color: #333333;
+    color: #333;
 }
 
-/* Publications */
 .publications {
     list-style: decimal;
     margin-left: 1.5rem;
@@ -400,104 +314,187 @@ body {
     line-height: 1.6;
 }
 
-/* Footer Styles */
-.footer {
-    max-width: 1200px;
-    margin: 4rem auto 0 auto;
-    padding: 2rem 2rem;
+.content img {
+    display: block;
+    margin: 1rem auto;
+}
+
+.content figure {
+    margin: 1.5rem 0;
     text-align: center;
-    color: #666666;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    margin-top: 4rem;
+    color: #666;
     font-size: 0.85rem;
     border-top: 1px solid #e0e0e0;
-    background-color: #ffffff;
 }
 
-/* Small screens - stack layout */
-@media (max-width: 768px) {
-    .top-nav-left {
-        padding-left: 0;
-    }
-    
-    .top-nav-right {
-        margin-left: 0;
-        gap: 1rem; /* Reduce gap between nav links */
-    }
-    
-    .top-nav-container {
-        padding: 0.75rem 1rem; /* Further reduce padding */
-        flex-wrap: wrap;
-    }
-    
-    .nav-link {
-        font-size: 0.85rem; /* Slightly smaller text */
-    }
-    
-    .nav-site-title {
-        font-size: 1rem;
-    }
-    
-    .layout {
-        flex-direction: column;
-        padding: 0 1rem; /* Reduce layout padding */
-        margin-top: 60px; /* Adjust for nav height */
-    }
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================
+   
+   Bootstrap Breakpoints:
+   - xs: <576px
+   - sm: ≥576px
+   - md: ≥768px
+   - lg: ≥992px
+   - xl: ≥1200px
+   - xxl: ≥1400px
+   
+   Our Strategy:
+   - ≥1200px (xl): Two-column (25% sidebar, 75% content)
+   - 768px-1199px (md-lg): Two-column (33% sidebar, 67% content)
+   - <768px: Single-column (stacked)
+   - <576px: Mobile optimizations
+*/
 
+/* ============================================
+   EXTRA LARGE SCREENS (≥1200px)
+   ============================================ */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
     .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 1.5rem; /* Reduce sidebar padding */
-    }
-
-    .main-content {
-        margin-left: 0;
-        padding: 1.5rem; /* Reduce main content padding */
-        max-width: 100%;
-    }
-
-    .footer {
-        margin-left: 0;
-        padding: 1.5rem;
-    }
-
-    .section h2 {
-        font-size: 1.5rem;
-    }
-}
-
-/* Very small screens */
-@media (max-width: 480px) {
-    .top-nav-container {
-        padding: 0.5rem 0.75rem;
+        position: sticky;
+        top: 80px;
+        margin-right: 1rem;
     }
     
-    .nav-site-title {
-        font-size: 0.95rem;
-    }
-    
-    .nav-link {
-        font-size: 0.8rem;
-    }
-    
-    .top-nav-right {
-        gap: 0.75rem;
-    }
-    
-    .layout {
+    .sidebar-content {
         padding: 0 0.75rem;
     }
     
-    .sidebar,
-    .main-content {
-        padding: 1rem;
+    /* Image scales naturally with sidebar width (25% of container) */
+    .profile-image {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   LARGE SCREENS (992px - 1199px)
+   ============================================ */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+        max-width: 1200px;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     
-    .photo-wrapper-square {
-        width: 150px;
-        height: 150px;
+    .sidebar {
+        position: sticky;
+        top: 80px;
+        margin-right: 1rem;
+    }
+    
+    .sidebar-content {
+        padding: 0 1rem;
+    }
+    
+    /* Image scales naturally with sidebar width (33% of container) */
+    .profile-image {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   MEDIUM SCREENS (768px - 991px)
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        max-width: 1200px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .sidebar {
+        position: sticky;
+        top: 80px;
+        margin-right: 1rem;
+    }
+    
+    .sidebar-content {
+        padding: 0 1rem;
+    }
+    
+    /* Image scales naturally with sidebar width (33% of container) */
+    .profile-image {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   SMALL SCREENS (<768px) - Stack layout
+   ============================================ */
+
+@media (max-width: 767.98px) {
+    .container {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Sidebar stacks above content */
+    .sidebar {
+        position: relative;
+        top: 0;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .sidebar-content {
+        padding: 0 0.75rem;
+    }
+    
+    /* Constrain image to reasonable size on mobile */
+    .profile-image {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL SCREENS (<576px) - Mobile
+   ============================================ */
+
+@media (max-width: 575.98px) {
+    .container {
+        max-width: 100%;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .sidebar-content {
+        padding: 0 0.5rem;
+    }
+    
+    .profile-image {
+        width: 100%;
+        max-width: 250px;
     }
     
     .section h2 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+    }
+    
+    .news-table td.news-date {
+        width: 100px;
+        padding-right: 1rem;
+        font-size: 0.9rem;
     }
 }
