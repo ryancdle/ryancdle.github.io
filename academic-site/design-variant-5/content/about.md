@@ -1,5 +1,0 @@
-I'm Dat Chi Le (Ryan), a Final-year Theoretical Physics student at the University of Sheffield. 
-
-From September 2025 onwards, working with the [Quantum Discovery of Science (QuDOS) Group](https://kyriienko.github.io/index.html) at the [Sheffield Quantum Centre](https://sheffieldquantum.com/), I am researching **quantum machine learning** and **generative modelling** under the supervision of [Professor Oleksandr Kyriienko](https://www.linkedin.com/in/oleksandr-kyriienko/). 
-
-From July to September 2025, I interned at the UCL Quantum Computation & Quantum Communications CDT (Centre for Doctoral Training), where I conducted research on hamiltonian-simulation quantum algorithms under the supervision of PhD Candidate [Prashati Tiwari](https://www.linkedin.com/in/prashasti-tiwari-b61342170/) and [Professor Sougato Bose](https://www.linkedin.com/in/sougato-bose-991025286/). 

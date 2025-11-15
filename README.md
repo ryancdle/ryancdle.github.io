@@ -1,26 +1,27 @@
-# Academic Portfolio Website
+# Personal Academic Website
 
-A simple, clean academic portfolio website built with HTML, CSS, and JavaScript.
+A clean, modern academic portfolio website built with HTML, CSS, and JavaScript.
 
 ## Site Structure
 
-The website is located in the `academic-site/` directory and consists of:
-
 - `index.html` - Main HTML file
 - `style.css` - All styling
-- `nav.js` - Navigation functionality (JavaScript)
+- `nav.js` - Navigation functionality
+- `markdown-loader.js` - Markdown content loader
+- `theme.js` - Dark/light theme toggle
+- `content/about.md` - About page content (Markdown)
 - `images/profile.jpg` - Profile photo
-- `resume.pdf` - CV/Resume (optional)
+- `.nojekyll` - GitHub Pages configuration
 
-## Requirements
+## Features
 
-The site requires:
-- **HTML** - Structure and content
-- **CSS** - Styling and layout
-- **JavaScript** - Navigation and interactivity
-
-No build process, no dependencies - just static files!
+- **Responsive Design** - Works on all devices
+- **Dark/Light Theme** - Toggle between themes
+- **Markdown Support** - Content loaded from Markdown files
+- **No Build Process** - Just static files, ready to deploy
 
 ## Deployment
 
-This site can be deployed to GitHub Pages or any static hosting service. Simply point to the `academic-site/` directory.
+This site is deployed to GitHub Pages at [ryancdle.github.io](https://ryancdle.github.io).
+
+The site automatically deploys when changes are pushed to the `main` branch.
