@@ -461,9 +461,22 @@ html[data-theme="dark"] {
     padding: 0;
 }
 
+/* Social icons next to navbar brand - ensure perfect alignment */
 .navbar .d-flex .nav-social-icons .nav-link {
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.navbar .d-flex .nav-social-icons .nav-link i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 1;
 }
 
 /* Ensure proper spacing between brand and social icons */
