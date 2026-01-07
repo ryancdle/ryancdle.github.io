@@ -487,3 +487,30 @@ html[data-theme="dark"] {
 .navbar .d-flex > .navbar-nav {
     margin-left: 0.75rem;
 }
+
+/* CV PDF Viewer Styles */
+.cv-container {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cv-pdf-viewer {
+    width: 100%;
+    height: 800px;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 4px;
+    background-color: var(--global-bg-color);
+}
+
+@media (max-width: 768px) {
+    .cv-pdf-viewer {
+        height: 600px;
+    }
+}
+
+.cv-download-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
