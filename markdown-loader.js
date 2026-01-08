@@ -45,20 +45,43 @@ document.addEventListener('DOMContentLoaded', function() {
             element.innerHTML = html;
             
             // Apply special styling for news table
-            if (element.closest('#news')) {
+            if (element.closest('#news') || element.closest('#recent-news')) {
                 const tables = element.querySelectorAll('table');
                 tables.forEach(table => {
                     table.classList.add('news-table');
-                    // Add classes to table cells
-                    const rows = table.querySelectorAll('tr');
-                    rows.forEach((row, index) => {
-                        if (index === 0) return; // Skip header row
-                        const cells = row.querySelectorAll('td');
-                        if (cells.length >= 2) {
-                            cells[0].classList.add('news-date');
-                            cells[1].classList.add('news-item');
-                        }
-                    });
+                    // Hide header row if it exists
+                    const thead = table.querySelector('thead');
+                    if (thead) {
+                        thead.style.display = 'none';
+                    }
+                    // Add classes to table cells in tbody
+                    const tbody = table.querySelector('tbody');
+                    if (tbody) {
+                        const rows = tbody.querySelectorAll('tr');
+                        rows.forEach((row) => {
+                            const cells = row.querySelectorAll('td');
+                            if (cells.length >= 2) {
+                                cells[0].classList.add('news-date');
+                                cells[1].classList.add('news-item');
+                            }
+                        });
+                    } else {
+                        // If no tbody, process all rows (skip header row if it's a th)
+                        const rows = table.querySelectorAll('tr');
+                        rows.forEach((row) => {
+                            const firstCell = row.querySelector('th');
+                            if (firstCell) {
+                                // This is a header row, hide it
+                                row.style.display = 'none';
+                            } else {
+                                const cells = row.querySelectorAll('td');
+                                if (cells.length >= 2) {
+                                    cells[0].classList.add('news-date');
+                                    cells[1].classList.add('news-item');
+                                }
+                            }
+                        });
+                    }
                 });
             }
             

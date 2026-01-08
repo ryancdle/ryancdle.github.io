@@ -514,3 +514,76 @@ html[data-theme="dark"] {
     margin-top: 1rem;
 }
 
+/* News section styling */
+#news,
+#recent-news {
+    margin-top: 3rem;
+}
+
+#recent-news h2 a {
+    color: var(--global-text-color);
+    text-decoration: none;
+}
+
+#recent-news h2 a:hover {
+    color: var(--global-theme-color);
+    text-decoration: underline;
+}
+
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#news .news-table thead,
+.news-table thead {
+    display: none !important;
+}
+
+#news .news-table th,
+.news-table th {
+    display: none !important;
+    font-weight: normal !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.news-table tbody tr:first-child td {
+    font-weight: normal !important;
+}
+
+.news-table td {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+    vertical-align: top;
+    font-weight: normal !important;
+}
+
+.news-table tr:last-child td {
+    border-bottom: none;
+}
+
+.news-date {
+    white-space: nowrap;
+    padding-right: 2rem;
+    color: var(--global-text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.news-item {
+    color: var(--global-text-color);
+}
+
+.news-item a {
+    color: var(--global-theme-color);
+    text-decoration: none;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
