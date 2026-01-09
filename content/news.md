@@ -1,5 +1,4 @@
-## News
-
+<!-- ## News -->
 | Date | News |
 | ------------ | ------------------------------------------------------------------------------------ |
 | Nov 21, 2025 | Team Ryoushi / Quantum Buddies won overall Grand Prix at the Quantinuum Bradford Hackathon 2025 |
